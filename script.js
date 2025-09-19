@@ -1,173 +1,148 @@
-/* ===============================
-   THE WOOF OF WALK STREET – JS
-   - Sticky agreements banner
-   - Reveal-on-scroll
-   - Parallax hero skyline
-   - Testimonials carousel
-   - Hybrid booking funnel (dog-walking.html)
-   =============================== */
+/* Base Reset & Typography */
+* { box-sizing:border-box; margin:0; padding:0 }
+body {
+  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.6; color:#1f2937; background:#fff;
+}
+a { color:#2563eb; text-decoration:none }
+a:hover { text-decoration:underline }
+h1,h2,h3 { font-weight:700; line-height:1.2; margin:.5rem 0 }
+h1 { font-size:2rem } h2 { font-size:1.5rem } h3 { font-size:1.2rem }
+p { margin:.5rem 0 }
 
-/* === Sticky banner === */
-(function(){
-  var banner=document.getElementById('noticeBanner');
-  var spacer=document.getElementById('noticeSpacer');
-  if(!banner||!spacer) return;
-  try{
-    var raw=localStorage.getItem('hideNoticeBannerUntil');
-    if(raw){
-      var until=parseInt(raw,10);
-      if(!isNaN(until) && Date.now()<until){ banner.style.display='none'; spacer.style.height='0px'; }
-    }
-  }catch(e){}
-  var btn=document.getElementById('dismissBannerBtn');
-  if(btn) btn.addEventListener('click',function(){
-    try{ localStorage.setItem('hideNoticeBannerUntil', String(Date.now()+30*24*60*60*1000)); }catch(e){}
-    banner.style.display='none'; spacer.style.height='0px';
-  });
-})();
+/* Layout */
+.container { max-width:1100px; margin:0 auto; padding:0 1rem }
+.grid { display:grid; gap:1rem }
+.grid.cols-2 { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) }
+.grid.cols-3 { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)) }
 
-/* === Reveal on scroll === */
-(function(){
-  var els=document.querySelectorAll('.reveal');
-  if(!els.length) return;
-  if(!('IntersectionObserver' in window)){
-    els.forEach(e=>e.classList.add('reveal--visible'));
-    return;
-  }
-  var io=new IntersectionObserver(entries=>{
-    entries.forEach(en=>{
-      if(en.isIntersecting){ en.target.classList.add('reveal--visible'); io.unobserve(en.target); }
-    });
-  },{threshold:.12});
-  els.forEach(e=>io.observe(e));
-})();
+/* Header */
+header { background:#fff; border-bottom:1px solid #e5e7eb }
+.nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 0 }
+.nav ul { display:flex; gap:1rem; list-style:none; flex-wrap:wrap }
+.nav .brand { display:flex; align-items:center; gap:.5rem }
+.nav .brand-text { font-weight:700; font-size:1.1rem; color:#111 }
 
-/* === Parallax hero skyline === */
-(function(){
-  var hero=document.querySelector('.hero');
-  if(!hero) return;
-  window.addEventListener('scroll', function(){
-    hero.style.setProperty('--parallaxY', (window.scrollY*0.25)+'px');
-  }, {passive:true});
-})();
+/* Hero */
+.hero { background:#f9fafb; padding:2rem 0 }
+.hero .wrap { display:grid; gap:1.5rem; align-items:start }
+.hero h1 { font-size:2.2rem; margin:.5rem 0 }
+.hero .lead { font-size:1.2rem; margin:.5rem 0 1rem }
+.hero-media img { width:100%; height:auto; border-radius:.8rem }
 
-/* === Testimonials carousel === */
-(function(){
-  var root=document.querySelector('.carousel');
-  if(!root) return;
-  var slides=[...root.querySelectorAll('.slide')];
-  var prev=root.querySelector('.prev'), next=root.querySelector('.next');
-  var dots=root.querySelector('.dots'); var i=0, t;
-  function go(n){ i=(n+slides.length)%slides.length; slides.forEach((s,idx)=>s.classList.toggle('is-active', idx===i)); updateDots(); }
-  function updateDots(){
-    if(!dots) return;
-    dots.innerHTML='';
-    slides.forEach((_,idx)=>{
-      var b=document.createElement('button');
-      b.className='dot'+(idx===i?' on':'');
-      b.setAttribute('aria-label','Go to slide '+(idx+1));
-      b.onclick=()=>{ go(idx); reset(); };
-      dots.appendChild(b);
-    });
-  }
-  function reset(){ clearInterval(t); t=setInterval(()=>go(i+1), 6000); }
-  if(prev) prev.onclick=()=>{ go(i-1); reset(); };
-  if(next) next.onclick=()=>{ go(i+1); reset(); };
-  updateDots(); reset();
-  var x0=null;
-  root.addEventListener('pointerdown',e=>x0=e.clientX);
-  root.addEventListener('pointerup',e=>{ if(x0===null) return; var dx=e.clientX-x0; if(dx>40&&prev) prev.onclick(); if(dx<-40&&next) next.onclick(); x0=null; });
-})();
+/* Buttons */
+.btn { display:inline-block; padding:.6rem 1.2rem; border-radius:.5rem; font-weight:600; text-align:center }
+.btn-primary { background:#2563eb; color:#fff }
+.btn-primary:hover { background:#1d4ed8 }
+.btn-ghost { border:1px solid #2563eb; color:#2563eb }
+.btn-ghost:hover { background:#eff6ff }
+.cta { font-weight:700; color:#2563eb }
 
-/* === Hybrid booking funnel (dog-walking.html) === */
-(function(){
-  var container = document.querySelector('.funnel');
-  var steps = document.querySelectorAll('.funnel-step');
-  if(!container || !steps.length) return; // only runs on dog-walking.html
+/* Features & Cards */
+.features { list-style:none; padding:0 }
+.features li { margin:.4rem 0 }
+.card { background:#fff; border:1px solid #e5e7eb; border-radius:.6rem; padding:1rem }
+.card .icon { font-size:1.4rem; margin-bottom:.3rem }
 
-  function showStep(n){
-    steps.forEach(function(s){
-      s.classList.toggle('is-active', s.getAttribute('data-step')===String(n));
-    });
-    // scroll to top of funnel on step change
-    var top = container.getBoundingClientRect().top + window.scrollY - 80;
-    window.scrollTo({ top: top, behavior:'smooth' });
-  }
+/* Pricing */
+.pricing { background:#f9fafb; padding:2rem 0 }
+.price-table { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
+.card.plan { position:relative }
+.card.plan.best { border:2px solid #2563eb }
+.price { font-size:1.6rem; font-weight:700 }
+.price .per { font-size:.9rem; font-weight:400 }
+.badge { position:absolute; top:.6rem; right:.6rem; background:#2563eb; color:#fff; padding:.2rem .5rem; border-radius:.4rem; font-size:.75rem }
 
-  // Next/Prev handlers
-  document.querySelectorAll('.next-step').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var next = this.getAttribute('data-next');
-      // basic validation for Step 1 (walk must be selected)
-      var current = this.closest('.funnel-step');
-      if(current && current.getAttribute('data-step')==='1'){
-        var chosen = document.querySelector('input[name="walk"]:checked');
-        if(!chosen){
-          alert('Please select a walk length to continue.');
-          return;
-        }
-      }
-      showStep(next);
-      if(next==='5'){ renderSummary(); }
-    });
-  });
-  document.querySelectorAll('[data-prev]').forEach(function(btn){
-    btn.addEventListener('click', function(){ showStep(this.getAttribute('data-prev')); });
-  });
+/* Promo & Calculation boxes */
+.promo{
+  background:#fff7ed;
+  border:1px dashed #f59e0b;
+  color:#7c2d12;
+  padding:.35rem .6rem;
+  border-radius:.5rem;
+  margin:.4rem 0 .6rem;
+  font-weight:700;
+}
+details.calc, details.calc-note{
+  background:#fff;
+  border:1px solid #e5e7eb;
+  border-radius:.6rem;
+  padding:.5rem .75rem;
+  margin-top:.5rem;
+}
+details.calc summary, details.calc-note summary{
+  cursor:pointer; font-weight:700; list-style:none;
+}
+details.calc summary::-webkit-details-marker,
+details.calc-note summary::-webkit-details-marker { display:none }
+details.calc summary::after,
+details.calc-note summary::after{
+  content:"▾"; float:right; transition:transform .2s ease
+}
+details.calc[open] summary::after,
+details.calc-note[open] summary::after{ transform:rotate(180deg) }
+details.calc div, details.calc-note div{ margin-top:.5rem }
 
-  function getSelected(name){
-    var el = document.querySelector('input[name="'+name+'"]:checked');
-    return el ? el.value : null;
-  }
-  function getAddons(){
-    return Array.from(document.querySelectorAll('input[name="addon"]:checked')).map(function(cb){
-      return {key: cb.value, price: Number(cb.dataset.price||0)};
-    });
-  }
+/* Tabs for Areas gallery */
+.tabs{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
+.tab{
+  padding:.35rem .6rem;border:1px solid #e5e7eb;background:#fff;border-radius:.5rem;
+  font-weight:700;cursor:pointer
+}
+.tab.active{background:#eef6ff;border-color:#93c5fd}
+.tab:focus{outline:2px solid #93c5fd;outline-offset:2px}
+.tabpanes figure{margin:.6rem 0 0}
 
-  function renderSummary(){
-    var out = [];
-    var walk = getSelected('walk');
-    if(walk==='30') out.push('30-minute Walk — $35');
-    if(walk==='60') out.push('60-minute Walk — $50');
+/* Fade transition for Areas gallery */
+.tabpanes figure{
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .28s ease, visibility 0s linear .28s;
+}
+.tabpanes figure.is-active{
+  opacity:1;
+  visibility:visible;
+  transition:opacity .28s ease;
+}
+.tabpanes img{border-radius:.8rem;display:block;width:100%;height:auto}
+@media (prefers-reduced-motion: reduce){
+  .tabpanes figure{ transition:none }
+}
 
-    var mem = getSelected('membership');
-    if(mem==='8walks') out.push('Paw Pass 8 Walks — $260');
-    if(mem==='12walks') out.push('Paw Pass 12 Walks — $380');
-    if(mem==='unlimited') out.push('Paw Pass Unlimited — $499/mo');
+/* Blog list */
+.postlist article{display:flex;gap:.7rem;margin:.7rem 0;border-bottom:1px solid #e5e7eb;padding-bottom:.7rem}
+.postlist .thumb{border-radius:.3rem;flex-shrink:0}
+.post-meta{font-size:.8rem;color:#6b7280}
 
-    var addons = getAddons();
-    addons.forEach(function(a){
-      var label = ({
-        treats:'Treat Pack +$12',
-        supplement:'Joint/Coat Supplement +$15',
-        photos:'Photo/Video Package +$15',
-        extradog:'Extra Dog +$20',
-        donation:'Shelter Donation +$5'
-      })[a.key] || a.key;
-      out.push(label);
-    });
+/* Blog tag badges */
+.tags { margin:.5rem 0; display:flex; flex-wrap:wrap; gap:.4rem }
+.tag {
+  display:inline-block;
+  background:#eff6ff;
+  color:#1e40af;
+  font-size:.8rem;
+  font-weight:600;
+  padding:.25rem .6rem;
+  border-radius:9999px;
+  border:1px solid #bfdbfe;
+  white-space:nowrap;
+}
+.tag:hover { background:#dbeafe; }
 
-    var wk = getSelected('weekend');
-    if(wk==='2nights') out.push('Weekend Woof Club — 2 Nights $250');
-    if(wk==='3nights') out.push('Weekend Woof Club — 3 Nights $300');
+/* Footer */
+footer{background:#111;color:#f9fafb;padding:1.5rem 0;margin-top:2rem}
+footer a{color:#93c5fd}
+.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.9rem}
 
-    var el = document.getElementById('summaryList');
-    if(el) el.innerHTML = out.length ? ('<ul><li>'+ out.join('</li><li>') +'</li></ul>') : '<em>No options selected yet.</em>';
-  }
+/* Notices */
+.notice{background:#2563eb;color:#fff;padding:.4rem 1rem;font-size:.85rem;text-align:center}
+.notice a{color:#bfdbfe;text-decoration:underline}
 
-  // Finalize → redirect to Time To Pet (new vs existing)
-  var finalize = document.getElementById('finalizeBooking');
-  if(finalize){
-    finalize.addEventListener('click', function(){
-      var clientType = getSelected('clienttype') || 'new';
-      var url = (clientType==='existing')
-        ? 'https://www.timetopet.com/portal/woofofwalkstreet'
-        : 'https://www.timetopet.com/portal/woofofwalkstreet/create-account';
-      window.location.href = url;
-    });
-  }
+/* Misc */
+.lead{font-size:1.1rem}
+.kicker{font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;color:#6b7280}
+blockquote{font-style:italic;padding:.8rem;border-left:3px solid #2563eb;margin:.4rem 0}
+cite{display:block;font-size:.8rem;color:#6b7280;margin-top:.2rem}
+.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+.skip-link:focus{position:static;width:auto;height:auto;margin:1rem;padding:.5rem;background:#fff;border:2px solid #2563eb}
 
-  // Initialize
-  showStep(1);
-})();
