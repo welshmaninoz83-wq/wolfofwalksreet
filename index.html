@@ -1,148 +1,333 @@
-/* Base Reset & Typography */
-* { box-sizing:border-box; margin:0; padding:0 }
-body {
-  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.6; color:#1f2937; background:#fff;
-}
-a { color:#2563eb; text-decoration:none }
-a:hover { text-decoration:underline }
-h1,h2,h3 { font-weight:700; line-height:1.2; margin:.5rem 0 }
-h1 { font-size:2rem } h2 { font-size:1.5rem } h3 { font-size:1.2rem }
-p { margin:.5rem 0 }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Book Dog Walking | South Melbourne | The Woof of Walk Street</title>
+  <meta name="description" content="Book 30 or 60-minute dog walks in South Melbourne. Choose memberships including Unlimited, add treats, supplements, photos, or a Weekend Woof Club stay, then finalize in Time To Pet.">
+  <meta name="keywords" content="dog walking South Melbourne, book dog walk Melbourne, Unlimited dog walks, Paw Pass, pet services">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* Layout */
-.container { max-width:1100px; margin:0 auto; padding:0 1rem }
-.grid { display:grid; gap:1rem }
-.grid.cols-2 { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) }
-.grid.cols-3 { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)) }
+  <!-- Social -->
+  <meta property="og:title" content="Book Dog Walking | The Woof of Walk Street">
+  <meta property="og:description" content="Premium GPS-tracked dog walks with insured, certified walkers. Add memberships and extras, then finalize in Time To Pet.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.woofofwalkstreet.com/dog-walking.html">
+  <meta property="og:image" content="https://www.woofofwalkstreet.com/images/dog-walking-south-melbourne.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Book Dog Walking | The Woof of Walk Street">
+  <meta name="twitter:description" content="South Melbourne GPS-tracked dog walks with memberships and add-ons.">
+  <meta name="twitter:image" content="https://www.woofofwalkstreet.com/images/dog-walking-south-melbourne.jpg">
 
-/* Header */
-header { background:#fff; border-bottom:1px solid #e5e7eb }
-.nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 0 }
-.nav ul { display:flex; gap:1rem; list-style:none; flex-wrap:wrap }
-.nav .brand { display:flex; align-items:center; gap:.5rem }
-.nav .brand-text { font-weight:700; font-size:1.1rem; color:#111 }
+  <!-- JSON-LD: Service + offers -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"PetService",
+    "@id":"https://www.woofofwalkstreet.com/dog-walking.html#service",
+    "name":"Dog Walking — The Woof of Walk Street",
+    "url":"https://www.woofofwalkstreet.com/dog-walking.html",
+    "telephone":"+61-456-754-050",
+    "areaServed":"South Melbourne, Port Melbourne, St Kilda",
+    "serviceType":"Dog Walking",
+    "offers":[
+      {"@type":"Offer","name":"30-Minute Walk","price":"35","priceCurrency":"AUD"},
+      {"@type":"Offer","name":"60-Minute Walk","price":"50","priceCurrency":"AUD"},
+      {"@type":"Offer","name":"Paw Pass — 8 Walks (Monthly)","price":"260","priceCurrency":"AUD"},
+      {"@type":"Offer","name":"Paw Pass — 12 Walks (Monthly)","price":"380","priceCurrency":"AUD"},
+      {"@type":"Offer","name":"Paw Pass — Unlimited (Monthly)","price":"499","priceCurrency":"AUD"}
+    ]
+  }
+  </script>
 
-/* Hero */
-.hero { background:#f9fafb; padding:2rem 0 }
-.hero .wrap { display:grid; gap:1.5rem; align-items:start }
-.hero h1 { font-size:2.2rem; margin:.5rem 0 }
-.hero .lead { font-size:1.2rem; margin:.5rem 0 1rem }
-.hero-media img { width:100%; height:auto; border-radius:.8rem }
+  <!-- JSON-LD: WebPage + images -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "url": "https://www.woofofwalkstreet.com/dog-walking.html",
+    "name": "Dog Walking | The Woof of Walk Street",
+    "description": "Professional dog walking in South Melbourne with GPS tracking, certified walkers, and flexible plans.",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://www.woofofwalkstreet.com/images/dog-walking-south-melbourne.jpg",
+      "caption": "Happy dog enjoying a walk in South Melbourne"
+    },
+    "image": [
+      {
+        "@type": "ImageObject",
+        "url": "https://www.woofofwalkstreet.com/images/dogs-playing-together.jpg",
+        "caption": "Two happy dogs playing during a walk in South Melbourne"
+      }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "The Woof of Walk Street",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.woofofwalkstreet.com/images/logo.jpeg"
+      }
+    }
+  }
+  </script>
 
-/* Buttons */
-.btn { display:inline-block; padding:.6rem 1.2rem; border-radius:.5rem; font-weight:600; text-align:center }
-.btn-primary { background:#2563eb; color:#fff }
-.btn-primary:hover { background:#1d4ed8 }
-.btn-ghost { border:1px solid #2563eb; color:#2563eb }
-.btn-ghost:hover { background:#eff6ff }
-.cta { font-weight:700; color:#2563eb }
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="images/logo.jpeg">
 
-/* Features & Cards */
-.features { list-style:none; padding:0 }
-.features li { margin:.4rem 0 }
-.card { background:#fff; border:1px solid #e5e7eb; border-radius:.6rem; padding:1rem }
-.card .icon { font-size:1.4rem; margin-bottom:.3rem }
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-KP5LVKN6X3"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments)}
+    gtag('js',new Date()); gtag('config','G-KP5LVKN6X3');
+  </script>
+</head>
+<body>
 
-/* Pricing */
-.pricing { background:#f9fafb; padding:2rem 0 }
-.price-table { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
-.card.plan { position:relative }
-.card.plan.best { border:2px solid #2563eb }
-.price { font-size:1.6rem; font-weight:700 }
-.price .per { font-size:.9rem; font-weight:400 }
-.badge { position:absolute; top:.6rem; right:.6rem; background:#2563eb; color:#fff; padding:.2rem .5rem; border-radius:.4rem; font-size:.75rem }
+  <!-- Sticky Agreements Banner -->
+  <div id="noticeBanner" class="notice-banner">
+    <span>By booking, you agree to our <a href="docs.html">Service Agreements</a>.</span>
+    <button id="dismissBannerBtn" aria-label="Dismiss">✕</button>
+  </div>
+  <div id="noticeSpacer"></div>
 
-/* Promo & Calculation boxes */
-.promo{
-  background:#fff7ed;
-  border:1px dashed #f59e0b;
-  color:#7c2d12;
-  padding:.35rem .6rem;
-  border-radius:.5rem;
-  margin:.4rem 0 .6rem;
-  font-weight:700;
-}
-details.calc, details.calc-note{
-  background:#fff;
-  border:1px solid #e5e7eb;
-  border-radius:.6rem;
-  padding:.5rem .75rem;
-  margin-top:.5rem;
-}
-details.calc summary, details.calc-note summary{
-  cursor:pointer; font-weight:700; list-style:none;
-}
-details.calc summary::-webkit-details-marker,
-details.calc-note summary::-webkit-details-marker { display:none }
-details.calc summary::after,
-details.calc-note summary::after{
-  content:"▾"; float:right; transition:transform .2s ease
-}
-details.calc[open] summary::after,
-details.calc-note[open] summary::after{ transform:rotate(180deg) }
-details.calc div, details.calc-note div{ margin-top:.5rem }
+  <!-- Navigation -->
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="logo"><img src="images/logo.jpeg" alt="The Woof of Walk Street logo"></span>
+        THE WOOF OF WALK STREET
+      </a>
+      <nav class="top-links" aria-label="Primary navigation">
+        <a href="dog-walking.html" aria-current="page">Dog Walking</a>
+        <a href="weekend-club.html">Weekend Woof Club</a>
+        <a href="contact.html">Contact</a>
+        <a href="docs.html">Agreements</a>
+      </nav>
+    </div>
+  </div>
 
-/* Tabs for Areas gallery */
-.tabs{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
-.tab{
-  padding:.35rem .6rem;border:1px solid #e5e7eb;background:#fff;border-radius:.5rem;
-  font-weight:700;cursor:pointer
-}
-.tab.active{background:#eef6ff;border-color:#93c5fd}
-.tab:focus{outline:2px solid #93c5fd;outline-offset:2px}
-.tabpanes figure{margin:.6rem 0 0}
+  <!-- Hero -->
+  <header class="hero reveal" style="--skyline: url('images/melbourne-skyline.svg');">
+    <div class="container hero-grid">
+      <div>
+        <div class="kicker">Hybrid Booking Funnel</div>
+        <h1>Build Your Perfect Walk</h1>
+        <p class="small">Pick a walk length, choose a membership, add treats or supplements, optionally add a Weekend Woof Club stay — then finalize in Time To Pet.</p>
+      </div>
+      <div><img class="hero-img" src="images/dog-walking-south-melbourne.jpg" alt="Happy dog enjoying a walk in South Melbourne"></div>
+    </div>
+  </header>
 
-/* Fade transition for Areas gallery */
-.tabpanes figure{
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .28s ease, visibility 0s linear .28s;
-}
-.tabpanes figure.is-active{
-  opacity:1;
-  visibility:visible;
-  transition:opacity .28s ease;
-}
-.tabpanes img{border-radius:.8rem;display:block;width:100%;height:auto}
-@media (prefers-reduced-motion: reduce){
-  .tabpanes figure{ transition:none }
-}
+  <!-- Logo + Photos Row -->
+  <section class="container reveal">
+    <div class="grid" style="grid-template-columns:1fr 1fr 1fr; gap:16px; margin:24px 0;">
+      <img src="images/logo.jpeg" alt="The Woof of Walk Street logo" class="card" style="padding:8px;">
+      <img src="images/dog-walking-south-melbourne.jpg" alt="Happy dog enjoying a walk in South Melbourne" class="card">
+      <img src="images/dogs-playing-together.jpg" alt="Two happy dogs playing during a walk in South Melbourne" class="card">
+    </div>
+  </section>
 
-/* Blog list */
-.postlist article{display:flex;gap:.7rem;margin:.7rem 0;border-bottom:1px solid #e5e7eb;padding-bottom:.7rem}
-.postlist .thumb{border-radius:.3rem;flex-shrink:0}
-.post-meta{font-size:.8rem;color:#6b7280}
+  <!-- Booking Funnel -->
+  <main class="container funnel" aria-label="Booking steps">
+    <!-- STEP 1 -->
+    <section class="card funnel-step is-active" data-step="1">
+      <h2 class="section-title">1) Choose Your Walk</h2>
+      <div class="grid two">
+        <label class="option">
+          <input type="radio" name="walk" value="30" required>
+          <div class="option-body">
+            <h3>30-Minute Walk</h3>
+            <p>Perfect for a midday stretch and sniff.</p>
+            <strong>$35</strong>
+          </div>
+        </label>
+        <label class="option">
+          <input type="radio" name="walk" value="60">
+          <div class="option-body">
+            <h3>60-Minute Walk</h3>
+            <p>Extra exercise for high-energy pups.</p>
+            <strong>$50</strong>
+          </div>
+        </label>
+      </div>
+      <div class="funnel-cta">
+        <button class="btn btn-primary next-step" data-next="2">Continue</button>
+      </div>
+    </section>
 
-/* Blog tag badges */
-.tags { margin:.5rem 0; display:flex; flex-wrap:wrap; gap:.4rem }
-.tag {
-  display:inline-block;
-  background:#eff6ff;
-  color:#1e40af;
-  font-size:.8rem;
-  font-weight:600;
-  padding:.25rem .6rem;
-  border-radius:9999px;
-  border:1px solid #bfdbfe;
-  white-space:nowrap;
-}
-.tag:hover { background:#dbeafe; }
+    <!-- STEP 2 -->
+    <section class="card funnel-step" data-step="2">
+      <h2 class="section-title">2) Paw Pass Membership (Optional)</h2>
+      <p class="small" style="margin-top:-6px">Lock in value and convenience. Skip per-walk payments and get priority scheduling.</p>
 
-/* Footer */
-footer{background:#111;color:#f9fafb;padding:1.5rem 0;margin-top:2rem}
-footer a{color:#93c5fd}
-.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.9rem}
+      <div class="grid three">
+        <label class="option">
+          <input type="radio" name="membership" value="none" checked>
+          <div class="option-body">
+            <h3>No Membership</h3>
+            <p>Pay-as-you-go.</p>
+            <strong>$0/mo</strong>
+          </div>
+        </label>
 
-/* Notices */
-.notice{background:#2563eb;color:#fff;padding:.4rem 1rem;font-size:.85rem;text-align:center}
-.notice a{color:#bfdbfe;text-decoration:underline}
+        <label class="option">
+          <input type="radio" name="membership" value="8walks">
+          <div class="option-body">
+            <h3>Paw Pass — 8 Walks</h3>
+            <p>Great for 2 walks/week on average.</p>
+            <strong>$260/mo</strong>
+          </div>
+        </label>
 
-/* Misc */
-.lead{font-size:1.1rem}
-.kicker{font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;color:#6b7280}
-blockquote{font-style:italic;padding:.8rem;border-left:3px solid #2563eb;margin:.4rem 0}
-cite{display:block;font-size:.8rem;color:#6b7280;margin-top:.2rem}
-.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{position:static;width:auto;height:auto;margin:1rem;padding:.5rem;background:#fff;border:2px solid #2563eb}
+        <label class="option">
+          <input type="radio" name="membership" value="12walks">
+          <div class="option-body">
+            <h3>Paw Pass — 12 Walks</h3>
+            <p>Best monthly value for active pups.</p>
+            <strong>$380/mo</strong>
+          </div>
+        </label>
 
+        <label class="option" style="outline:2px solid var(--accent); border-color:var(--accent);">
+          <input type="radio" name="membership" value="unlimited">
+          <div class="option-body">
+            <h3>⭐ Paw Pass — Unlimited</h3>
+            <p>Weekday walks covered with priority scheduling.</p>
+            <strong>$499/mo</strong>
+          </div>
+        </label>
+      </div>
+
+      <ul class="small" style="margin:10px 0 0; color:var(--muted)">
+        <li>Unused walks don’t roll over (except where required by law).</li>
+        <li>Unlimited: 1 standard weekday walk/day per dog within service area.</li>
+        <li>Cancel anytime effective next billing cycle.</li>
+      </ul>
+
+      <!-- Stripe subscription shortcuts (placeholders) -->
+      <div class="card" style="margin-top:12px">
+        <h3 style="margin:0 0 8px">Prefer to subscribe now?</h3>
+        <p class="small" style="margin:0 0 8px">Secure checkout handled by Stripe. Your membership will be activated and applied to bookings.</p>
+        <div class="grid three">
+          <a class="btn" href="https://buy.stripe.com/YOUR_8_WALKS_LINK" target="_blank" rel="noopener">Subscribe — 8 Walks</a>
+          <a class="btn" href="https://buy.stripe.com/YOUR_12_WALKS_LINK" target="_blank" rel="noopener">Subscribe — 12 Walks</a>
+          <a class="btn btn-accent" href="https://buy.stripe.com/YOUR_UNLIMITED_LINK" target="_blank" rel="noopener">⭐ Unlimited</a>
+        </div>
+        <p class="tiny" style="margin-top:8px;color:var(--muted)">After subscribing, book walks as usual in the client portal. We’ll tag your account as a member.</p>
+      </div>
+
+      <div class="funnel-cta">
+        <button class="btn" data-prev="1">Back</button>
+        <button class="btn btn-primary next-step" data-next="3">Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="card funnel-step" data-step="3">
+      <h2 class="section-title">3) Add-Ons (Optional)</h2>
+      <div class="grid two">
+        <label class="addon option">
+          <input type="checkbox" name="addon" value="treats" data-price="12">
+          <div class="option-body">
+            <h3>Treat Pack</h3><p>Aussie-made natural treats.</p><strong>+$12</strong>
+          </div>
+        </label>
+        <label class="addon option">
+          <input type="checkbox" name="addon" value="supplement" data-price="15">
+          <div class="option-body">
+            <h3>Joint &amp; Coat Supplement</h3><p>Wellness chews.</p><strong>+$15</strong>
+          </div>
+        </label>
+        <label class="addon option">
+          <input type="checkbox" name="addon" value="photos" data-price="15">
+          <div class="option-body">
+            <h3>Photo/Video Package</h3><p>HD pics + short clip.</p><strong>+$15</strong>
+          </div>
+        </label>
+        <label class="addon option">
+          <input type="checkbox" name="addon" value="extradog" data-price="20">
+          <div class="option-body">
+            <h3>Extra Dog</h3><p>We’ll exercise both.</p><strong>+$20</strong>
+          </div>
+        </label>
+        <label class="addon option">
+          <input type="checkbox" name="addon" value="donation" data-price="5">
+          <div class="option-body">
+            <h3>Shelter Donation</h3><p>Add $5 for local shelters.</p><strong>+$5</strong>
+          </div>
+        </label>
+      </div>
+      <div class="funnel-cta">
+        <button class="btn" data-prev="2">Back</button>
+        <button class="btn btn-primary next-step" data-next="4">Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="card funnel-step" data-step="4">
+      <h2 class="section-title">4) Add Weekend Woof Club? (Optional)</h2>
+      <div class="grid two">
+        <label class="option">
+          <input type="radio" name="weekend" value="none" checked>
+          <div class="option-body"><h3>No Weekend Boarding</h3></div>
+        </label>
+        <label class="option">
+          <input type="radio" name="weekend" value="2nights">
+          <div class="option-body"><h3>2-Night Weekend</h3><p>Fri–Sun</p><strong>$250</strong></div>
+        </label>
+        <label class="option">
+          <input type="radio" name="weekend" value="3nights">
+          <div class="option-body"><h3>3-Night Weekend</h3><p>Fri–Mon</p><strong>$300</strong></div>
+        </label>
+      </div>
+      <div class="funnel-cta">
+        <button class="btn" data-prev="3">Back</button>
+        <button class="btn btn-primary next-step" data-next="5">Continue</button>
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="card funnel-step" data-step="5">
+      <h2 class="section-title">5) Finalize Your Booking</h2>
+      <div class="grid two">
+        <label class="option">
+          <input type="radio" name="clienttype" value="new" checked>
+          <div class="option-body"><h3>New Client</h3><p>Complete the New Client Form.</p></div>
+        </label>
+        <label class="option">
+          <input type="radio" name="clienttype" value="existing">
+          <div class="option-body"><h3>Existing Client</h3><p>Open the Client Portal.</p></div>
+        </label>
+      </div>
+
+      <div class="summary">
+        <h3>Your Selection Summary</h3>
+        <div id="summaryList" class="small" aria-live="polite"></div>
+      </div>
+
+      <div class="funnel-cta">
+        <button class="btn" data-prev="4">Back</button>
+        <button id="finalizeBooking" class="btn btn-primary">Finalize in Time To Pet</button>
+      </div>
+      <p class="tiny">You’ll be redirected to our partner portal. Use your summary above to select matching options.</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer reveal">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand"><span class="logo"><img src="images/logo.jpeg" alt=""></span> THE WOOF OF WALK STREET</div>
+        <p class="small">South Melbourne • Phone: <a href="tel:0456754050">0456 754 050</a> • Email: <a href="mailto:info@woofofwalkstreet.com">info@woofofwalkstreet.com</a></p>
+      </div>
+      <div class="socials" aria-label="Social media (placeholders)">
+        <span class="social-icon"><span class="i ig" aria-hidden="true"></span></span>
+        <span class="social-icon"><span class="i fb" aria-hidden="true"></span></span>
+        <span class="social-icon"><span class="i tk" aria-hidden="true"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
