@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Top 5 Dog-Friendly Walks in South Melbourne",
+    "url": "/blog/top-dog-walks-south-melbourne.html",
+    "date": "2025-09-18",
+    "tags": ["Guides", "Walks"],
+    "excerpt": "Our favourite local routes for happy, safe sniff-aris around South Melbourne with tips for enjoyable outings.",
+    "image": "/images/dogs-playing-together.jpg",
+    "imageAlt": "Two dogs enjoying a park walk in South Melbourne"
+  },
+  {
+    "title": "How to Prepare Your Dog for Weekend Boarding",
+    "url": "/blog/prepare-for-weekend-boarding.html",
+    "date": "2025-09-18",
+    "tags": ["Boarding", "Checklists"],
+    "excerpt": "A simple checklist to make your pup’s weekend boarding stay relaxing and fun.",
+    "image": "/images/weekend-woof-club-cozy-dog.jpg",
+    "imageAlt": "Cozy dog relaxing during weekend boarding"
+  }
+]

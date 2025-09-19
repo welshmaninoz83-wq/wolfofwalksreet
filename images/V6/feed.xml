@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>The Woof of Walk Street Blog</title>
+    <link>https://www.woofofwalkstreet.com/blog/</link>
+    <description>Guides and tips for happy pups and stress-free owners.</description>
+    <item>
+      <title>Top 5 Dog-Friendly Walks in South Melbourne</title>
+      <link>https://www.woofofwalkstreet.com/blog/top-dog-walks-south-melbourne.html</link>
+      <guid>https://www.woofofwalkstreet.com/blog/top-dog-walks-south-melbourne.html</guid>
+      <pubDate>Thu, 18 Sep 2025 12:00:00 +1000</pubDate>
+    </item>
+    <item>
+      <title>How to Prepare Your Dog for Weekend Boarding</title>
+      <link>https://www.woofofwalkstreet.com/blog/prepare-for-weekend-boarding.html</link>
+      <guid>https://www.woofofwalkstreet.com/blog/prepare-for-weekend-boarding.html</guid>
+      <pubDate>Thu, 18 Sep 2025 12:00:00 +1000</pubDate>
+    </item>
+  </channel>
+</rss>
