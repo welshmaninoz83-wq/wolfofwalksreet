@@ -1,106 +1,123 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Walking Services | The Woof of Walk Street – South Melbourne</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="One-dog-only walking in South Melbourne. 45-minute walks, GPS tracking & photos. Casual and value memberships. Weekdays only." />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="images/logo/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walking Services | The Woof of Walk Street</title>
+  <meta name="description" content="Premium 45-minute solo dog walks in South Melbourne. One dog at a time, GPS tracking, photo updates. Book casual or save with memberships.">
+  <link rel="canonical" href="https://www.woofofwalkstreet.com/walking-services.html">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/logo-main-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/logo/logo-main-512.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo/logo-main-192.png">
+  <meta name="theme-color" content="#ff9800">
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.min.css">
 </head>
-<body id="top">
-  <header>
-    <div class="container">
-      <nav>
-        <a href="index.html" class="logo"><img src="images/logo/logo-main.webp" alt="Logo" height="60" /></a>
-        <div class="links">
-          <a href="index.html">Home</a>
-          <a href="walking-services.html" aria-current="page"><strong>Walking</strong></a>
-          <a href="boarding-services.html">Boarding</a>
-          <a href="memberships.html">Memberships</a>
-          <a href="blog/index.html">Blog</a>
-          <a href="faq.html">FAQ</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <a class="btn btn-primary" href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
-      </nav>
+<body>
+
+<!-- 🔝 Updated Header -->
+<header>
+  <div class="container">
+    <nav class="site-nav">
+      <a class="logo" href="index.html">
+        <img src="images/logo/logo-main-192.png" alt="Woof of Walk Street logo" height="56" />
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="links" data-nav>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="walking-services.html" aria-current="page">Walking Services</a></li>
+        <li><a href="boarding-services.html">Boarding</a></li>
+        <li><a href="memberships.html">Memberships</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+
+      <a class="btn btn-primary nav-cta" target="_blank" rel="noopener"
+         href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.querySelector('.nav-toggle');
+  const list = document.querySelector('[data-nav]');
+  if (btn && list) {
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      list.classList.toggle('is-open');
+    });
+  }
+</script>
+
+<!-- Page Hero -->
+<section class="hero hero-walks">
+  <div class="container">
+    <h1>45-Minute Solo Dog Walks</h1>
+    <p class="muted">No packs. No car shuttles. One dog at a time, with the entire session spent walking.</p>
+  </div>
+</section>
+
+<!-- Main Content -->
+<section class="section">
+  <div class="container grid grid-2">
+    <div>
+      <img src="images/hero/dogs-playing-together-1600.jpg" alt="Happy dogs enjoying a solo walk" loading="lazy">
     </div>
-  </header>
-
-  <section class="hero">
-    <div class="container">
-      <h1>Walking Services (One Dog Only)</h1>
-      <p>Ethical, 1-to-1 dog walking. <strong>45-minute walks</strong>, GPS tracking & photos. Weekdays only (Mon–Fri). No pack walks. No car-ferrying.</p>
-      <img src="images/dog-beach-closeup-hero.jpg" alt="Happy dog on beach close-up" loading="lazy" style="max-width:100%;border-radius:12px;margin:20px 0" />
-      <a class="btn btn-primary" href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
-      <p style="margin-top:10px;font-size:.9rem;">Have questions? <a href="faq.html">Read our FAQ</a></p>
+    <div>
+      <h2>What’s Included</h2>
+      <ul>
+        <li>✔️ 45-minute solo walk (weekday availability only, 7am–7pm)</li>
+        <li>✔️ GPS tracking + live photo updates</li>
+        <li>✔️ Enrichment and calm, one-on-one attention</li>
+        <li>✔️ No group walks, no distractions, safer experience</li>
+      </ul>
+      <p><strong>Price:</strong> $80 per walk (casual booking)</p>
+      <p><a class="btn btn-primary" target="_blank" rel="noopener"
+            href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book a Walk</a></p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="divider"></div>
+<section class="section alt">
+  <div class="container">
+    <h2>Why Solo Walks?</h2>
+    <p>We believe in safety and quality. Unlike pack walking services, we focus entirely on your dog—ensuring they get the exercise, enrichment, and peace of mind they deserve. Every minute is dedicated to walking, not transport.</p>
+  </div>
+</section>
 
-  <section>
-    <div class="container">
-      <div class="card">
-        <h2>Casual 45-Minute Walk</h2>
-        <p class="price">$60 <span class="per">per walk</span></p>
-        <ul class="features">
-          <li>One dog only — 100% attention</li>
-          <li>GPS tracking & photos after every walk</li>
-          <li>All walking time (no car-ferrying)</li>
-        </ul>
-        <p class="highlight">🔥 New customer special: <strong>50% off your first walk</strong>.</p>
-        <a class="btn btn-primary" href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
-        <p style="margin-top:8px;font-size:.9rem;">Have questions? <a href="faq.html">Read our FAQ</a></p>
-      </div>
+<section class="brand-strip">
+  <div class="container">
+    <div class="brand-strip__imgwrap">
+      <img src="images/footer/footer-illustration-1600.jpg" alt="" loading="lazy" width="1600" height="500" />
     </div>
-  </section>
+  </div>
+</section>
 
-  <div class="divider"></div>
+<!-- ⬇️ Updated Footer -->
+<footer>
+  <div class="container">
+    <p><strong>The Woof of Walk Street</strong> — South Melbourne</p>
+    <p><a href="tel:+61456754050">0456 754 050</a> · <a href="mailto:info@walkstreet.com">info@walkstreet.com</a></p>
+    <nav class="footer-nav">
+      <a href="blog/index.html">Blog</a> ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="sitemap.xml">Sitemap</a> ·
+      <a class="btn btn-primary" target="_blank" rel="noopener"
+         href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
+    </nav>
+    <p class="muted">© <span id="y"></span> The Woof of Walk Street</p>
+  </div>
+</footer>
 
-  <section>
-    <div class="container">
-      <h2>Prefer a Plan? Memberships Save More</h2>
-      <div class="grid grid-3">
-        <div class="card">
-          <h3>8 Walks / Month</h3>
-          <p class="price">$400</p>
-          <p class="savings">Save $80 vs casual</p>
-          <p class="highlight">10% off first month</p>
-          <a class="btn btn-ghost" href="memberships.html">View Details</a>
-        </div>
-        <div class="card">
-          <h3>12 Walks / Month</h3>
-          <p class="price">$500</p>
-          <p class="savings">Save $220 vs casual</p>
-          <p class="highlight">10% off first month</p>
-          <a class="btn btn-ghost" href="memberships.html">View Details</a>
-        </div>
-        <div class="card">
-          <h3>Unlimited Weekday Walks</h3>
-          <p class="price">$650</p>
-          <p class="savings">Save ~ $610 vs casual</p>
-          <p class="highlight">20% off first month</p>
-          <a class="btn btn-ghost" href="memberships.html">View Details</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="trust-banner">
-    <div class="container"><p>🐾 Fully Insured · Police Checked · South Melbourne Local · Serving Albert Park & Port Melbourne</p></div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <hr />
-      <p>© 2025 The Woof of Walk Street · South Melbourne · Mon–Fri only · 
-        <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms & Conditions</a> · <a href="faq.html">FAQ</a>
-      </p>
-      <p style="margin-top:6px;font-size:.9rem;"><a href="#top">⬆ Back to top</a></p>
-    </div>
-  </footer>
-
-  <div class="sticky-cta"><a href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">📅 Book Now</a></div>
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
