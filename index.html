@@ -43,16 +43,14 @@
 </head>
 <body>
 
-<!-- 🔝 Updated Header -->
+<!-- Header (unchanged except your new nav/CTA) -->
 <header>
   <div class="container">
     <nav class="site-nav">
       <a class="logo" href="index.html">
         <img src="images/logo/logo-main-192.png" alt="Woof of Walk Street logo" height="56" />
       </a>
-
       <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-
       <ul class="links" data-nav>
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="walking-services.html">Walking Services</a></li>
@@ -61,28 +59,40 @@
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
-
       <a class="btn btn-primary nav-cta" target="_blank" rel="noopener"
          href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
     </nav>
   </div>
 </header>
-
 <script>
-  // Mobile menu toggle
   const btn = document.querySelector('.nav-toggle');
   const list = document.querySelector('[data-nav]');
-  if (btn && list) {
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      list.classList.toggle('is-open');
-    });
-  }
+  if (btn && list) btn.addEventListener('click', () => {
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    list.classList.toggle('is-open');
+  });
 </script>
 
-<!-- Hero -->
+<!-- Hero with <picture> -->
 <section class="hero">
+  <picture>
+    <!-- WebP -->
+    <source srcset="
+      images/hero/melbourne-skyline-800.webp 800w,
+      images/hero/melbourne-skyline-1200.webp 1200w,
+      images/hero/melbourne-skyline-1600.webp 1600w,
+      images/hero/melbourne-skyline-2400.webp 2400w" type="image/webp">
+    <!-- JPG -->
+    <source srcset="
+      images/hero/melbourne-skyline-800.jpg 800w,
+      images/hero/melbourne-skyline-1200.jpg 1200w,
+      images/hero/melbourne-skyline-1600.jpg 1600w,
+      images/hero/melbourne-skyline-2400.jpg 2400w" type="image/jpeg">
+    <img src="images/hero/melbourne-skyline-1600.jpg" alt="South Melbourne skyline and walking paths"
+         width="1600" height="900" loading="eager" fetchpriority="high">
+  </picture>
+
   <div class="container">
     <h1>Premium One-on-One Dog Walking & Boutique Boarding</h1>
     <p class="muted">No packs. No fluff. Just elite solo walks with GPS + photos. Weekdays 7am–7pm.</p>
@@ -96,19 +106,31 @@
 <section class="section">
   <div class="container grid grid-3">
     <div class="card">
-      <img src="images/hero/dog-walking-south-melbourne-1600.jpg" alt="Solo dog walking by the bay" loading="lazy">
+      <picture>
+        <source srcset="images/hero/dog-walking-south-melbourne-800.webp 800w, images/hero/dog-walking-south-melbourne-1200.webp 1200w, images/hero/dog-walking-south-melbourne-1600.webp 1600w" type="image/webp">
+        <source srcset="images/hero/dog-walking-south-melbourne-800.jpg 800w, images/hero/dog-walking-south-melbourne-1200.jpg 1200w, images/hero/dog-walking-south-melbourne-1600.jpg 1600w" type="image/jpeg">
+        <img src="images/hero/dog-walking-south-melbourne-1200.jpg" alt="Solo dog walking by the bay" loading="lazy">
+      </picture>
       <h3>45-Minute Solo Walks</h3>
       <p>One dog at a time. Safer, calmer, tailored to your dog.</p>
       <p><a class="btn btn-ghost" href="walking-services.html">Learn more</a></p>
     </div>
     <div class="card">
-      <img src="images/hero/weekend-woof-cozy-1600.jpg" alt="Cozy home-style boarding" loading="lazy">
+      <picture>
+        <source srcset="images/hero/weekend-woof-cozy-800.webp 800w, images/hero/weekend-woof-cozy-1200.webp 1200w, images/hero/weekend-woof-cozy-1600.webp 1600w" type="image/webp">
+        <source srcset="images/hero/weekend-woof-cozy-800.jpg 800w, images/hero/weekend-woof-cozy-1200.jpg 1200w, images/hero/weekend-woof-cozy-1600.jpg 1600w" type="image/jpeg">
+        <img src="images/hero/weekend-woof-cozy-1200.jpg" alt="Cozy home-style boarding" loading="lazy">
+      </picture>
       <h3>Boutique Boarding</h3>
       <p>Home-style comfort with structured enrichment and rest.</p>
       <p><a class="btn btn-ghost" href="boarding-services.html">Learn more</a></p>
     </div>
     <div class="card">
-      <img src="images/hero/south-melbourne-beach-1600.jpg" alt="South Melbourne beach path" loading="lazy">
+      <picture>
+        <source srcset="images/hero/south-melbourne-beach-800.webp 800w, images/hero/south-melbourne-beach-1200.webp 1200w, images/hero/south-melbourne-beach-1600.webp 1600w" type="image/webp">
+        <source srcset="images/hero/south-melbourne-beach-800.jpg 800w, images/hero/south-melbourne-beach-1200.jpg 1200w, images/hero/south-melbourne-beach-1600.jpg 1600w" type="image/jpeg">
+        <img src="images/hero/south-melbourne-beach-1200.jpg" alt="South Melbourne beach path" loading="lazy">
+      </picture>
       <h3>Memberships</h3>
       <p>Save with monthly packs—4 or 10 walks, or Weekday Unlimited.</p>
       <p><a class="btn btn-ghost" href="memberships.html">See memberships</a></p>
@@ -141,12 +163,16 @@
 <section class="brand-strip">
   <div class="container">
     <div class="brand-strip__imgwrap">
-      <img src="images/footer/footer-illustration-1600.jpg" alt="" loading="lazy" width="1600" height="500" />
+      <picture>
+        <source srcset="images/footer/footer-illustration-800.webp 800w, images/footer/footer-illustration-1200.webp 1200w, images/footer/footer-illustration-1600.webp 1600w" type="image/webp">
+        <source srcset="images/footer/footer-illustration-800.jpg 800w, images/footer/footer-illustration-1200.jpg 1200w, images/footer/footer-illustration-1600.jpg 1600w" type="image/jpeg">
+        <img src="images/footer/footer-illustration-1600.jpg" alt="" loading="lazy" width="1600" height="500" />
+      </picture>
     </div>
   </div>
 </section>
 
-<!-- ⬇️ Updated Footer -->
+<!-- Footer (unchanged except your new lower nav items) -->
 <footer>
   <div class="container">
     <p><strong>The Woof of Walk Street</strong> — South Melbourne</p>
@@ -161,8 +187,6 @@
     <p class="muted">© <span id="y"></span> The Woof of Walk Street</p>
   </div>
 </footer>
-
 <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
-
