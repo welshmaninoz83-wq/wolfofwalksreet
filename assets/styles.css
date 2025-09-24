@@ -1,147 +1,124 @@
-/* Base Reset & Typography */
-* { box-sizing:border-box; margin:0; padding:0 }
-body {
-  font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  line-height:1.6; color:#1f2937; background:#fff;
-}
-a { color:#2563eb; text-decoration:none }
-a:hover { text-decoration:underline }
-h1,h2,h3 { font-weight:700; line-height:1.2; margin:.5rem 0 }
-h1 { font-size:2rem } h2 { font-size:1.5rem } h3 { font-size:1.2rem }
-p { margin:.5rem 0 }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Walking Services | The Woof of Walk Street</title>
+  <meta name="description" content="Premium 45-minute solo dog walks in South Melbourne. One dog at a time, GPS tracking, photo updates. Book casual or save with memberships.">
+  <link rel="canonical" href="https://www.woofofwalkstreet.com/walking-services.html">
 
-/* Layout */
-.container { max-width:1100px; margin:0 auto; padding:0 1rem }
-.grid { display:grid; gap:1rem }
-.grid.cols-2 { grid-template-columns:repeat(auto-fit,minmax(300px,1fr)) }
-.grid.cols-3 { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)) }
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/logo-main-192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/logo/logo-main-512.png">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/logo/logo-main-192.png">
+  <meta name="theme-color" content="#ff9800">
 
-/* Header */
-header { background:#fff; border-bottom:1px solid #e5e7eb }
-.nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 0 }
-.nav ul { display:flex; gap:1rem; list-style:none; flex-wrap:wrap }
-.nav .brand { display:flex; align-items:center; gap:.5rem }
-.nav .brand-text { font-weight:700; font-size:1.1rem; color:#111 }
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
 
-/* Hero */
-.hero { background:#f9fafb; padding:2rem 0 }
-.hero .wrap { display:grid; gap:1.5rem; align-items:start }
-.hero h1 { font-size:2.2rem; margin:.5rem 0 }
-.hero .lead { font-size:1.2rem; margin:.5rem 0 1rem }
-.hero-media img { width:100%; height:auto; border-radius:.8rem }
+<!-- 🔝 Updated Header -->
+<header>
+  <div class="container">
+    <nav class="site-nav">
+      <a class="logo" href="index.html">
+        <img src="images/logo/logo-main-192.png" alt="Woof of Walk Street logo" height="56" />
+      </a>
 
-/* Buttons */
-.btn { display:inline-block; padding:.6rem 1.2rem; border-radius:.5rem; font-weight:600; text-align:center }
-.btn-primary { background:#2563eb; color:#fff }
-.btn-primary:hover { background:#1d4ed8 }
-.btn-ghost { border:1px solid #2563eb; color:#2563eb }
-.btn-ghost:hover { background:#eff6ff }
-.cta { font-weight:700; color:#2563eb }
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
 
-/* Features & Cards */
-.features { list-style:none; padding:0 }
-.features li { margin:.4rem 0 }
-.card { background:#fff; border:1px solid #e5e7eb; border-radius:.6rem; padding:1rem }
-.card .icon { font-size:1.4rem; margin-bottom:.3rem }
+      <ul class="links" data-nav>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="walking-services.html" aria-current="page">Walking Services</a></li>
+        <li><a href="boarding-services.html">Boarding</a></li>
+        <li><a href="memberships.html">Memberships</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
 
-/* Pricing */
-.pricing { background:#f9fafb; padding:2rem 0 }
-.price-table { display:grid; gap:1rem; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)) }
-.card.plan { position:relative }
-.card.plan.best { border:2px solid #2563eb }
-.price { font-size:1.6rem; font-weight:700 }
-.price .per { font-size:.9rem; font-weight:400 }
-.badge { position:absolute; top:.6rem; right:.6rem; background:#2563eb; color:#fff; padding:.2rem .5rem; border-radius:.4rem; font-size:.75rem }
+      <a class="btn btn-primary nav-cta" target="_blank" rel="noopener"
+         href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
+    </nav>
+  </div>
+</header>
 
-/* Promo & Calculation boxes */
-.promo{
-  background:#fff7ed;
-  border:1px dashed #f59e0b;
-  color:#7c2d12;
-  padding:.35rem .6rem;
-  border-radius:.5rem;
-  margin:.4rem 0 .6rem;
-  font-weight:700;
-}
-details.calc, details.calc-note{
-  background:#fff;
-  border:1px solid #e5e7eb;
-  border-radius:.6rem;
-  padding:.5rem .75rem;
-  margin-top:.5rem;
-}
-details.calc summary, details.calc-note summary{
-  cursor:pointer; font-weight:700; list-style:none;
-}
-details.calc summary::-webkit-details-marker,
-details.calc-note summary::-webkit-details-marker { display:none }
-details.calc summary::after,
-details.calc-note summary::after{
-  content:"▾"; float:right; transition:transform .2s ease
-}
-details.calc[open] summary::after,
-details.calc-note[open] summary::after{ transform:rotate(180deg) }
-details.calc div, details.calc-note div{ margin-top:.5rem }
+<script>
+  // Mobile menu toggle
+  const btn = document.querySelector('.nav-toggle');
+  const list = document.querySelector('[data-nav]');
+  if (btn && list) {
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      list.classList.toggle('is-open');
+    });
+  }
+</script>
 
-/* Tabs for Areas gallery */
-.tabs{display:flex;gap:.5rem;margin-top:.5rem;flex-wrap:wrap}
-.tab{
-  padding:.35rem .6rem;border:1px solid #e5e7eb;background:#fff;border-radius:.5rem;
-  font-weight:700;cursor:pointer
-}
-.tab.active{background:#eef6ff;border-color:#93c5fd}
-.tab:focus{outline:2px solid #93c5fd;outline-offset:2px}
-.tabpanes figure{margin:.6rem 0 0}
+<!-- Page Hero -->
+<section class="hero hero-walks">
+  <div class="container">
+    <h1>45-Minute Solo Dog Walks</h1>
+    <p class="muted">No packs. No car shuttles. One dog at a time, with the entire session spent walking.</p>
+  </div>
+</section>
 
-/* Fade transition for Areas gallery */
-.tabpanes figure{
-  opacity:0;
-  visibility:hidden;
-  transition:opacity .28s ease, visibility 0s linear .28s;
-}
-.tabpanes figure.is-active{
-  opacity:1;
-  visibility:visible;
-  transition:opacity .28s ease;
-}
-.tabpanes img{border-radius:.8rem;display:block;width:100%;height:auto}
-@media (prefers-reduced-motion: reduce){
-  .tabpanes figure{ transition:none }
-}
+<!-- Main Content -->
+<section class="section">
+  <div class="container grid grid-2">
+    <div>
+      <img src="images/hero/dogs-playing-together-1600.jpg" alt="Happy dogs enjoying a solo walk" loading="lazy">
+    </div>
+    <div>
+      <h2>What’s Included</h2>
+      <ul>
+        <li>✔️ 45-minute solo walk (weekday availability only, 7am–7pm)</li>
+        <li>✔️ GPS tracking + live photo updates</li>
+        <li>✔️ Enrichment and calm, one-on-one attention</li>
+        <li>✔️ No group walks, no distractions, safer experience</li>
+      </ul>
+      <p><strong>Price:</strong> $80 per walk (casual booking)</p>
+      <p><a class="btn btn-primary" target="_blank" rel="noopener"
+            href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book a Walk</a></p>
+    </div>
+  </div>
+</section>
 
-/* Blog list */
-.postlist article{display:flex;gap:.7rem;margin:.7rem 0;border-bottom:1px solid #e5e7eb;padding-bottom:.7rem}
-.postlist .thumb{border-radius:.3rem;flex-shrink:0}
-.post-meta{font-size:.8rem;color:#6b7280}
+<section class="section alt">
+  <div class="container">
+    <h2>Why Solo Walks?</h2>
+    <p>We believe in safety and quality. Unlike pack walking services, we focus entirely on your dog—ensuring they get the exercise, enrichment, and peace of mind they deserve. Every minute is dedicated to walking, not transport.</p>
+  </div>
+</section>
 
-/* Blog tag badges */
-.tags { margin:.5rem 0; display:flex; flex-wrap:wrap; gap:.4rem }
-.tag {
-  display:inline-block;
-  background:#eff6ff;
-  color:#1e40af;
-  font-size:.8rem;
-  font-weight:600;
-  padding:.25rem .6rem;
-  border-radius:9999px;
-  border:1px solid #bfdbfe;
-  white-space:nowrap;
-}
-.tag:hover { background:#dbeafe; }
+<section class="brand-strip">
+  <div class="container">
+    <div class="brand-strip__imgwrap">
+      <img src="images/footer/footer-illustration-1600.jpg" alt="" loading="lazy" width="1600" height="500" />
+    </div>
+  </div>
+</section>
 
-/* Footer */
-footer{background:#111;color:#f9fafb;padding:1.5rem 0;margin-top:2rem}
-footer a{color:#93c5fd}
-.foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;font-size:.9rem}
+<!-- ⬇️ Updated Footer -->
+<footer>
+  <div class="container">
+    <p><strong>The Woof of Walk Street</strong> — South Melbourne</p>
+    <p><a href="tel:+61456754050">0456 754 050</a> · <a href="mailto:info@walkstreet.com">info@walkstreet.com</a></p>
+    <nav class="footer-nav">
+      <a href="blog/index.html">Blog</a> ·
+      <a href="privacy.html">Privacy Policy</a> ·
+      <a href="sitemap.xml">Sitemap</a> ·
+      <a class="btn btn-primary" target="_blank" rel="noopener"
+         href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
+    </nav>
+    <p class="muted">© <span id="y"></span> The Woof of Walk Street</p>
+  </div>
+</footer>
 
-/* Notices */
-.notice{background:#2563eb;color:#fff;padding:.4rem 1rem;font-size:.85rem;text-align:center}
-.notice a{color:#bfdbfe;text-decoration:underline}
-
-/* Misc */
-.lead{font-size:1.1rem}
-.kicker{font-size:.9rem;text-transform:uppercase;letter-spacing:.05em;color:#6b7280}
-blockquote{font-style:italic;padding:.8rem;border-left:3px solid #2563eb;margin:.4rem 0}
-cite{display:block;font-size:.8rem;color:#6b7280;margin-top:.2rem}
-.skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-.skip-link:focus{position:static;width:auto;height:auto;margin:1rem;padding:.5rem;background:#fff;border:2px solid #2563eb}
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+idth:auto;height:auto;margin:1rem;padding:.5rem;background:#fff;border:2px solid #2563eb}
