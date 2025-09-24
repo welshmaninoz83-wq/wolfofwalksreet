@@ -1,124 +1,228 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Walking Services | The Woof of Walk Street</title>
-  <meta name="description" content="Premium 45-minute solo dog walks in South Melbourne. One dog at a time, GPS tracking, photo updates. Book casual or save with memberships.">
-  <link rel="canonical" href="https://www.woofofwalkstreet.com/walking-services.html">
+/* === Base Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <!-- Icons -->
-  <link rel="icon" type="image/png" sizes="192x192" href="images/logo/logo-main-192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="images/logo/logo-main-512.png">
-  <link rel="shortcut icon" href="images/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/logo/logo-main-192.png">
-  <meta name="theme-color" content="#ff9800">
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #333;
+  line-height: 1.6;
+}
 
-  <!-- Fonts & CSS -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.min.css">
-</head>
-<body>
+/* === Containers & Layout === */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-<!-- 🔝 Updated Header -->
-<header>
-  <div class="container">
-    <nav class="site-nav">
-      <a class="logo" href="index.html">
-        <img src="images/logo/logo-main-192.png" alt="Woof of Walk Street logo" height="56" />
-      </a>
+.section {
+  padding: 3rem 0;
+}
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+.grid {
+  display: grid;
+  gap: 2rem;
+}
 
-      <ul class="links" data-nav>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="walking-services.html" aria-current="page">Walking Services</a></li>
-        <li><a href="boarding-services.html">Boarding</a></li>
-        <li><a href="memberships.html">Memberships</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
-      <a class="btn btn-primary nav-cta" target="_blank" rel="noopener"
-         href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
-    </nav>
-  </div>
-</header>
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 
-<script>
-  // Mobile menu toggle
-  const btn = document.querySelector('.nav-toggle');
-  const list = document.querySelector('[data-nav]');
-  if (btn && list) {
-    btn.addEventListener('click', () => {
-      const open = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!open));
-      list.classList.toggle('is-open');
-    });
-  }
-</script>
+/* === Header === */
+header {
+  background: #fff8f2;
+  border-bottom: 2px solid #ff9800;
+}
 
-<!-- Page Hero -->
-<section class="hero hero-walks">
-  <div class="container">
-    <h1>45-Minute Solo Dog Walks</h1>
-    <p class="muted">No packs. No car shuttles. One dog at a time, with the entire session spent walking.</p>
-  </div>
-</section>
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
 
-<!-- Main Content -->
-<section class="section">
-  <div class="container grid grid-2">
-    <div>
-      <img src="images/hero/dogs-playing-together-1600.jpg" alt="Happy dogs enjoying a solo walk" loading="lazy">
-    </div>
-    <div>
-      <h2>What’s Included</h2>
-      <ul>
-        <li>✔️ 45-minute solo walk (weekday availability only, 7am–7pm)</li>
-        <li>✔️ GPS tracking + live photo updates</li>
-        <li>✔️ Enrichment and calm, one-on-one attention</li>
-        <li>✔️ No group walks, no distractions, safer experience</li>
-      </ul>
-      <p><strong>Price:</strong> $80 per walk (casual booking)</p>
-      <p><a class="btn btn-primary" target="_blank" rel="noopener"
-            href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book a Walk</a></p>
-    </div>
-  </div>
-</section>
+.site-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
 
-<section class="section alt">
-  <div class="container">
-    <h2>Why Solo Walks?</h2>
-    <p>We believe in safety and quality. Unlike pack walking services, we focus entirely on your dog—ensuring they get the exercise, enrichment, and peace of mind they deserve. Every minute is dedicated to walking, not transport.</p>
-  </div>
-</section>
+.site-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+}
 
-<section class="brand-strip">
-  <div class="container">
-    <div class="brand-strip__imgwrap">
-      <img src="images/footer/footer-illustration-1600.jpg" alt="" loading="lazy" width="1600" height="500" />
-    </div>
-  </div>
-</section>
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: #ff9800;
+}
 
-<!-- ⬇️ Updated Footer -->
-<footer>
-  <div class="container">
-    <p><strong>The Woof of Walk Street</strong> — South Melbourne</p>
-    <p><a href="tel:+61456754050">0456 754 050</a> · <a href="mailto:info@walkstreet.com">info@walkstreet.com</a></p>
-    <nav class="footer-nav">
-      <a href="blog/index.html">Blog</a> ·
-      <a href="privacy.html">Privacy Policy</a> ·
-      <a href="sitemap.xml">Sitemap</a> ·
-      <a class="btn btn-primary" target="_blank" rel="noopener"
-         href="https://www.timetopet.com/portal/woofofwalkstreet/create-account">Book Now</a>
-    </nav>
-    <p class="muted">© <span id="y"></span> The Woof of Walk Street</p>
-  </div>
-</footer>
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+}
 
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-</body>
-</html>
-idth:auto;height:auto;margin:1rem;padding:.5rem;background:#fff;border:2px solid #2563eb}
+/* === Hero Sections === */
+.hero {
+  padding: 4rem 0;
+  text-align: center;
+  background: linear-gradient(to right, #ffcc80, #ff9800);
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #e65100;
+}
+
+.btn-secondary {
+  background: #fff;
+  color: #ff9800;
+  border: 2px solid #ff9800;
+}
+
+.btn-secondary:hover {
+  background: #ff9800;
+  color: #fff;
+}
+
+.btn-ghost {
+  background: none;
+  border: 2px solid #ff9800;
+  color: #ff9800;
+}
+
+.btn-ghost:hover {
+  background: #ff9800;
+  color: #fff;
+}
+
+/* === Cards === */
+.card {
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: #fff8f2;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* === Forms === */
+form {
+  display: grid;
+  gap: 1rem;
+}
+
+input, textarea {
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background: #ff9800;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #e65100;
+}
+
+/* === Footer === */
+footer {
+  background: #fff8f2;
+  border-top: 2px solid #ff9800;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.footer-nav {
+  margin-top: 0.5rem;
+}
+
+.footer-nav a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer-nav a:hover {
+  color: #ff9800;
+}
+
+/* === Sitemap Grid === */
+.sitemap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.sitemap-grid a {
+  display: block;
+  padding: 1rem;
+  background: #fff8f2;
+  border: 2px solid #ff9800;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.sitemap-grid a:hover {
+  background: #ff9800;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.sitemap-sublist {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.sitemap-sublist a {
+  border: none;
+  background: none;
+  padding: 0.25rem 0;
+  color: #d2691e;
+  font-weight: 500;
+}
