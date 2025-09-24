@@ -1,58 +1,52 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog | The Woof of Walk Street</title>
-  <meta name="description" content="Read the latest updates, news, and fun reports from The Woof of Walk Street.">
-  <link rel="canonical" href="https://www.woofofwalkstreet.com/blog/index.html">
-
-  <link rel="icon" href="../images/favicon.ico">
-  <link rel="stylesheet" href="../css/styles.min.css">
+  <meta name="description" content="Updates, tips, and community notes from The Woof of Walk Street.">
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="brand"><img src="../images/logo/logo-mark-200.png" width="40" height="40" alt=""><span>The Woof of Walk Street</span></a>
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="../walking-services.html">Walking Services</a></li>
+          <li><a href="../boarding.html">Boarding</a></li>
+          <li><a href="../memberships.html">Memberships</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="btn" href="../book-now.html">Book Now</a>
+    </div>
+  </header>
 
-<header>
-  <div class="container">
-    <nav class="site-nav">
-      <a class="logo" href="../index.html"><img src="../images/logo/logo-main-192.png" alt="Woof of Walk Street logo" height="56"></a>
-      <ul class="links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../walking-services.html">Walking Services</a></li>
-        <li><a href="../boarding-services.html">Boarding</a></li>
-        <li><a href="../memberships.html">Memberships</a></li>
-        <li><a href="../faq.html">FAQ</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Blog</h1>
+      <p>News, tips & local spots from our walks.</p>
+    </div>
+  </section>
 
-<section class="hero">
-  <picture>
-    <source srcset="../images/blog/q3-pawformance-800.webp 800w, ../images/blog/q3-pawformance-1200.webp 1200w, ../images/blog/q3-pawformance-1600.webp 1600w" type="image/webp">
-    <source srcset="../images/blog/q3-pawformance-800.jpg 800w, ../images/blog/q3-pawformance-1200.jpg 1200w, ../images/blog/q3-pawformance-1600.jpg 1600w" type="image/jpeg">
-    <img src="../images/blog/q3-pawformance-1200.jpg" alt="Q3 Pawformance Report graphic" loading="eager">
-  </picture>
-  <div class="container">
-    <h1>Our Blog</h1>
-  </div>
-</section>
+  <section class="section">
+    <div class="container grid-3">
+      <article class="card">
+        <div class="media"><img src="../images/gallery/q3-pawformance-800.webp" width="800" height="800" alt="Q3 Pawformance cover"></div>
+        <h3><a href="q3-pawformance.html">Q3 Pawformance Report</a></h3>
+        <p>Tail wags trending up and zoomies outperforming…</p>
+      </article>
 
-<section class="section">
-  <div class="container">
-    <article>
-      <h2><a href="q3-pawformance.html">Q3 Pawformance Report</a></h2>
-      <p>A parody financial report, dog-walking style. Tail wags, zoomies, and record pup-formance.</p>
-    </article>
-  </div>
-</section>
+      <!-- Add other blog cards here -->
+    </div>
+  </section>
 
-<footer>
-  <div class="container">
-    <p>© <span id="y"></span> The Woof of Walk Street</p>
-  </div>
-</footer>
-<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <footer class="site-footer">
+    <div class="container credits"><p>&copy; <span id="y"></span> The Woof of Walk Street</p></div>
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
 </body>
 </html>
+
